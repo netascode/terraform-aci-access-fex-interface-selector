@@ -11,36 +11,30 @@ terraform {
   }
 }
 
+resource "aci_rest" "infraFexP" {
+  dn         = "uni/infra/fexprof-FEX101"
+  class_name = "infraFexP"
+}
+
 module "main" {
   source = "../.."
 
-  name = "ABC"
+  interface_profile = aci_rest.infraFexP.content.name
+  name              = "1-1"
 }
 
-data "aci_rest" "fvTenant" {
-  dn = "uni/tn-ABC"
+data "aci_rest" "infraHPortS" {
+  dn = "uni/infra/fexprof-FEX101/hports-${module.main.name}-typ-range"
 
   depends_on = [module.main]
 }
 
-resource "test_assertions" "fvTenant" {
-  component = "fvTenant"
+resource "test_assertions" "infraHPortS" {
+  component = "infraHPortS"
 
   equal "name" {
     description = "name"
-    got         = data.aci_rest.fvTenant.content.name
-    want        = "ABC"
-  }
-
-  equal "nameAlias" {
-    description = "nameAlias"
-    got         = data.aci_rest.fvTenant.content.nameAlias
-    want        = ""
-  }
-
-  equal "descr" {
-    description = "descr"
-    got         = data.aci_rest.fvTenant.content.descr
-    want        = ""
+    got         = data.aci_rest.infraHPortS.content.name
+    want        = module.main.name
   }
 }
