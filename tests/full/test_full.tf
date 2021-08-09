@@ -20,7 +20,7 @@ module "main" {
   source = "../.."
 
   interface_profile = aci_rest.infraFexP.content.name
-  name              = "1-1"
+  name              = "1-2"
   policy_group_type = "access"
   policy_group      = "ACC1"
   port_blocks = [{

@@ -16,7 +16,7 @@ module "aci_access_fex_interface_selector" {
   source = "netascode/access-fex-interface-selector/aci"
 
   interface_profile = "FEX101"
-  name              = "1-1"
+  name              = "1-2"
   policy_group_type = "access"
   policy_group      = "ACC1"
   port_blocks = [{

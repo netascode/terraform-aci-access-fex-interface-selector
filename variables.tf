@@ -22,6 +22,11 @@ variable "policy_group_type" {
   description = "Interface policy group type. Choices: `access`, `pc`, `vpc`."
   type        = string
   default     = "access"
+
+  validation {
+    condition     = contains(["access", "pc", "vpc"], var.policy_group_type)
+    error_message = "Allowed values: `access`, `pc` or `vpc."
+  }
 }
 
 variable "policy_group" {
