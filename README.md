@@ -12,7 +12,8 @@ Location in GUI:
 
 ```hcl
 module "aci_access_fex_interface_selector" {
-  source = "netascode/access-fex-interface-selector/aci"
+  source  = "netascode/access-fex-interface-selector/aci"
+  version = ">= 0.0.1"
 
   interface_profile = "FEX101"
   name              = "1-2"
