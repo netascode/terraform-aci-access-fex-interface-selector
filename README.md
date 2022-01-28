@@ -13,7 +13,7 @@ Location in GUI:
 ```hcl
 module "aci_access_fex_interface_selector" {
   source  = "netascode/access-fex-interface-selector/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   interface_profile = "FEX101"
   name              = "1-2"
@@ -26,7 +26,6 @@ module "aci_access_fex_interface_selector" {
     to_port     = 2
   }]
 }
-
 ```
 
 ## Requirements
@@ -34,13 +33,13 @@ module "aci_access_fex_interface_selector" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 0.2.0 |
+| <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 2.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aci"></a> [aci](#provider\_aci) | >= 0.2.0 |
+| <a name="provider_aci"></a> [aci](#provider\_aci) | >= 2.0.0 |
 
 ## Inputs
 
@@ -63,7 +62,7 @@ module "aci_access_fex_interface_selector" {
 
 | Name | Type |
 |------|------|
-| [aci_rest.infraHPortS](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
-| [aci_rest.infraPortBlk](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
-| [aci_rest.infraRsAccBaseGrp](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
+| [aci_rest_managed.infraHPortS](https://registry.terraform.io/providers/CiscoDevNet/aci/latest/docs/resources/rest_managed) | resource |
+| [aci_rest_managed.infraPortBlk](https://registry.terraform.io/providers/CiscoDevNet/aci/latest/docs/resources/rest_managed) | resource |
+| [aci_rest_managed.infraRsAccBaseGrp](https://registry.terraform.io/providers/CiscoDevNet/aci/latest/docs/resources/rest_managed) | resource |
 <!-- END_TF_DOCS -->
