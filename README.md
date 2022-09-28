@@ -13,7 +13,7 @@ Location in GUI:
 ```hcl
 module "aci_access_fex_interface_selector" {
   source  = "netascode/access-fex-interface-selector/aci"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   interface_profile = "FEX101"
   name              = "1-2"
@@ -32,7 +32,7 @@ module "aci_access_fex_interface_selector" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 2.0.0 |
 
 ## Providers
@@ -49,7 +49,7 @@ module "aci_access_fex_interface_selector" {
 | <a name="input_name"></a> [name](#input\_name) | FEX interface selector name. | `string` | n/a | yes |
 | <a name="input_policy_group_type"></a> [policy\_group\_type](#input\_policy\_group\_type) | Interface policy group type. Choices: `access`, `pc`, `vpc`. | `string` | `"access"` | no |
 | <a name="input_policy_group"></a> [policy\_group](#input\_policy\_group) | Interface policy group name. | `string` | `""` | no |
-| <a name="input_port_blocks"></a> [port\_blocks](#input\_port\_blocks) | List of port blocks. Allowed values `from_module`, `to_module`: 1-9. Default value `from_module`, `to_module`: 1. Allowed values `from_port`, `to_port`: 1-127. Default value `to_port`: `from_port`. | <pre>list(object({<br>    name        = string<br>    description = optional(string)<br>    from_module = optional(number)<br>    to_module   = optional(number)<br>    from_port   = number<br>    to_port     = optional(number)<br>  }))</pre> | `[]` | no |
+| <a name="input_port_blocks"></a> [port\_blocks](#input\_port\_blocks) | List of port blocks. Allowed values `from_module`, `to_module`: 1-9. Default value `from_module`, `to_module`: 1. Allowed values `from_port`, `to_port`: 1-127. Default value `to_port`: `from_port`. | <pre>list(object({<br>    name        = string<br>    description = optional(string, "")<br>    from_module = optional(number, 1)<br>    to_module   = optional(number)<br>    from_port   = number<br>    to_port     = optional(number)<br>  }))</pre> | `[]` | no |
 
 ## Outputs
 
